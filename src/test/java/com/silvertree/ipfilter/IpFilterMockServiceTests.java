@@ -25,8 +25,8 @@ public class IpFilterMockServiceTests extends IpFilterServiceTestCases {
 
 	@Before
 	public void setMockervice(){
-		mockService = new IIpFilterServiceImpl();
-		mockService.setIpFilterDao(new IpFilterDao(){
+		service = new IIpFilterServiceImpl();
+		service.setIpFilterDao(new IpFilterDao(){
 			public List<IPFilter> selectAllFilters() {
 				List<IPFilter> list = new ArrayList<IPFilter>();
 				list.add(new IPFilter(IpFilterServiceTestCases.FILTER_PATTERN_01));
@@ -41,7 +41,6 @@ public class IpFilterMockServiceTests extends IpFilterServiceTestCases {
 				// unimplemented
 			};
 		});
-		this.service = mockService;
 		assertNotNull(service);
 	}
 
