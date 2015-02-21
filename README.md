@@ -34,6 +34,6 @@ For running tests you need to install and run redis:
   
   (http://db.apache.org/derby/quick_start.html)
   
- #Setting up database with configuration
+ #Setting up database with configuration:
   Use IpFilterDao implementations
   
