@@ -18,7 +18,7 @@ The service validates whether any given IP address is a permitted client.
  
 #IIpFilterServiceImpl
 The service can be accessed trough the IIpFilterService.validateIpAddress(String ipAddress); call.
-If the given ip address is not valid, ForbiddenIpAddressException is thrown.
+If the given ip address is not valid (does not fit to any of the ip ranges in the configuration) than a ForbiddenIpAddressException is thrown.
  
 The permitted IP address ranges can be stored in a relational database or in redis based on the used DAO implementation.
 
