@@ -19,16 +19,9 @@ import com.silvertree.ipfilter.dao.IpFilterDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IpFilterJdbcServiceTests extends IpFilterServiceTestCases {
 
-
-	@Autowired
-	private IIpFilterServiceImpl service;
-
-	@Autowired
-	private IpFilterDao ipFilterJDBCDAO;
 	
 	@Before
 	public void setUpRelationalDatabaseService(){
-		this.dao = ipFilterJDBCDAO;
 		super.setUp();
 	}
 	

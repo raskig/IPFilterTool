@@ -32,6 +32,5 @@
 
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
 		p:connection-factory-ref="jedisConnFactory" />
-    
-      
+		
 </beans>

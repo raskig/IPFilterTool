@@ -23,16 +23,6 @@ import com.silvertree.ipfilter.dao.IpFilterDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IpFilterRedisServiceTests extends IpFilterServiceTestCases {
 
-	
-    @Autowired
-    private RedisTemplate<String, String> template;
-
-    @Resource(name="redisTemplate")
-    private SetOperations<String, String> setOps;
-	
-	
-
-
 	@Before
 	public void setUpRedis(){
 		super.setUp();
