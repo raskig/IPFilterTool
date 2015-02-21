@@ -4,7 +4,7 @@ Demo implementation of Spring Tool Suite for validating permitted ip addresses b
 
 The configuration contains several range of IP addresses from which we will accept connections.
 The range configuration can be ip range (from-ip - to-ip) or
-it can be a wildcatded ip address.
+it can be a wildcarded ip address.
 
 Example config:
 
@@ -16,7 +16,7 @@ The service validates whether any given IP address is a permitted client.
  
 #IIpFilterServiceImpl
 The service can be accessed trough the IIpFilterService.validateIpAddress(String ipAddress); call.
-If the ip address is not valid, ForbiddenIpAddressException is thrown.
+If the given ip address is not valid, ForbiddenIpAddressException is thrown.
  
 The permitted IP address ranges can be stored in a relational database or in redis based on the used DAO implementation.
 
@@ -28,7 +28,7 @@ For running tests you need to install and run redis:
 
 #Using custom Relational database:
   Customize app-context.xml <!-- JDBC settings --> section. (Current configuration is for derbby.) 
-  Create database. Example SQL for setting up derby datanbase:
+  Create database. Example SQL for setting up derby database:
   
   https://github.com/raskig/IPFilterTool/blob/master/src/main/java/com/silvertree/ipfilter/dao/sql/db-schema.sql
   
