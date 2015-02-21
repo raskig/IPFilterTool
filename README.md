@@ -28,7 +28,7 @@ For running tests you need to install and run redis:
   http://redis.io/topics/quickstart
   For using a remote redis instance: Customize app-context.xml if necessary.
 
-#Using custom Relational database:
+#Using with your own Relational database:
 
   Add the following section to the application-context, with your database parameters:
   
@@ -45,13 +45,25 @@ For running tests you need to install and run redis:
 		    <property name="serverName" value="localhost" />
 		    <property name="portNumber" value="1527" />
 	   </bean>
-  
-  
+	   
   Create database. Example SQL for setting up derby database:
   
   https://github.com/raskig/IPFilterTool/blob/master/src/main/java/com/silvertree/ipfilter/dao/sql/db-schema.sql
   
   Derby howto: http://db.apache.org/derby/quick_start.html
+  
+  #Using with your own Redis database:
+
+  Add the following section to the application-context, with your database parameters:
+  
+  	<bean id="jedisConnFactory"
+	class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+	p:use-pool="true"
+	p:hostName="localhost"
+	p:port="6379" />
+	  
+  
+
   
 #Adding filter config lines to database:
   
