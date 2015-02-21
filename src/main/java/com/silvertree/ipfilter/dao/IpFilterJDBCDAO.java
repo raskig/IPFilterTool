@@ -35,6 +35,11 @@ public class IpFilterJDBCDAO implements IIPFilterDao, IpFilterRelationalDBDao {
 		return filterList;
 	}
 	
+	public void addFilter(IPFilter newIpfilter){
+		jdbcTemplate.update("INSERT INTO IP_FILTER (PATTERN) VALUES(?)",
+	        new Object[] { newIpfilter.getPattern() });
+	}
+	
     private static final class IPFilterMapper implements RowMapper<IPFilter> {
         public IPFilter mapRow(ResultSet rs, int rowNum)
 				throws SQLException {
@@ -42,6 +47,11 @@ public class IpFilterJDBCDAO implements IIPFilterDao, IpFilterRelationalDBDao {
 			return filter;
 		}
     }
+
+	public void removeFilter(IPFilter newIpfilter) {
+		jdbcTemplate.update("DELETE FROM IP_FILTER WHERE PATTERN = ?",
+		        new Object[] { newIpfilter.getPattern() });
+	}
 
 
 }

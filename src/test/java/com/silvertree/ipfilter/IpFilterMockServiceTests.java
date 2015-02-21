@@ -33,7 +33,13 @@ public class IpFilterMockServiceTests extends IpFilterServiceTestCases {
 				list.add(new IPFilter(IpFilterServiceTestCases.FILTER_PATTERN_02));
 				list.add(new IPFilter(IpFilterServiceTestCases.FILTER_PATTERN_03));
 				return list;
-			}
+			};
+			public void addFilter(IPFilter newIpfilter) {
+				// unimplemented
+			};
+			public void removeFilter(IPFilter newIpfilter) {
+				// unimplemented
+			};
 		});
 		this.service = mockService;
 		assertNotNull(service);

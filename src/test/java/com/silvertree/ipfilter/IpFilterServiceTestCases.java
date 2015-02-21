@@ -22,7 +22,6 @@ public abstract class IpFilterServiceTestCases extends TestCase {
 	
 	protected IIpFilterServiceImpl service;
 	
-	protected final static String IP_FILTERS_KEY = "IP_FILTERS";
 	protected final static String FILTER_PATTERN_01 = "188.221.174.101 - 188.221.174.199";
 	protected final static String FILTER_PATTERN_02 = "82.165.97.11 - 82.165.97.79";
 	protected final static String FILTER_PATTERN_03 = "82.132.141.*";

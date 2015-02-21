@@ -14,5 +14,8 @@ import com.silvertree.ipfilter.model.IPFilter;
 public interface IIPFilterDao {
 	
 	List<IPFilter> selectAllFilters();
-
+	
+	public void addFilter(IPFilter newIpfilter);
+	
+	public void removeFilter(IPFilter newIpfilter);
 }
