@@ -29,7 +29,24 @@ For running tests you need to install and run redis:
   For using a remote redis instance: Customize app-context.xml if necessary.
 
 #Using custom Relational database:
-  Customize app-context.xml <!-- JDBC settings --> section. (Current configuration is for derbby.) 
+
+  Add the following section to the application-context, with your database parameters:
+  
+  	<bean id="dataSource" class="...">
+		   <property name="databaseName" value="..." />
+		   <property name="serverName" value=".." />
+		   <property name="portNumber" value="..." />
+	  </bean>
+	  
+	  Derby Example:
+	  
+	  	<bean id="dataSource" class="org.apache.derby.jdbc.ClientDataSource">
+		    <property name="databaseName" value="MyDbTest" />
+		    <property name="serverName" value="localhost" />
+		    <property name="portNumber" value="1527" />
+	   </bean>
+  
+  
   Create database. Example SQL for setting up derby database:
   
   https://github.com/raskig/IPFilterTool/blob/master/src/main/java/com/silvertree/ipfilter/dao/sql/db-schema.sql
