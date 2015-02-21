@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.silvertree.ipfilter.dao.IIPFilterDao;
+import com.silvertree.ipfilter.dao.IpFilterDao;
 
 /**
  * Test for checking the functions of IpFilter service.
@@ -34,7 +34,7 @@ public class IpFilterRedisServiceTests extends IpFilterServiceTestCases {
 	private IIpFilterServiceImpl redisService;
 	
 	@Autowired
-	private IIPFilterDao ipFilterRedisDAO;
+	private IpFilterDao ipFilterRedisDAO;
 
 	@Before
 	public void setUpRedis(){

@@ -19,7 +19,7 @@ import com.silvertree.ipfilter.model.IPFilter;
  */
 
 @Component
-public class IpFilterJDBCDAO implements IIPFilterDao, IpFilterRelationalDBDao {
+public class IpFilterJDBCDAO implements IpFilterDao, IpFilterRelationalDBDao {
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -51,7 +51,5 @@ public class IpFilterJDBCDAO implements IIPFilterDao, IpFilterRelationalDBDao {
 	public void removeFilter(IPFilter newIpfilter) {
 		jdbcTemplate.update("DELETE FROM IP_FILTER WHERE PATTERN = ?",
 		        new Object[] { newIpfilter.getPattern() });
-	}
-
-
+	}	
 }

@@ -20,7 +20,7 @@ import com.silvertree.ipfilter.model.IPFilter;
  */
 
 @Component
-public class IpFilterRedisDAO implements IIPFilterDao {
+public class IpFilterRedisDAO implements IpFilterDao {
 
 	protected final static String IP_FILTERS_KEY = "IP_FILTERS";
 	

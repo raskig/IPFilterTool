@@ -2,16 +2,16 @@ package com.silvertree.ipfilter;
 
 import java.util.List;
 
-import com.silvertree.ipfilter.dao.IIPFilterDao;
+import com.silvertree.ipfilter.dao.IpFilterDao;
 import com.silvertree.ipfilter.exception.ForbiddenIpAddressException;
 import com.silvertree.ipfilter.exception.MalformedIpAddressException;
 import com.silvertree.ipfilter.model.IPFilter;
 
 public class IIpFilterServiceImpl implements IIpFilterService {
 
-	private IIPFilterDao ipFilterDao;
+	private IpFilterDao ipFilterDao;
 
-	public void setIpFilterDao(IIPFilterDao ipFilterDao) {
+	public void setIpFilterDao(IpFilterDao ipFilterDao) {
 		this.ipFilterDao = ipFilterDao;
 	}
 

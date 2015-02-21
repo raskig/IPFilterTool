@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.silvertree.ipfilter.dao.IIPFilterDao;
+import com.silvertree.ipfilter.dao.IpFilterDao;
 import com.silvertree.ipfilter.exception.ForbiddenIpAddressException;
 import com.silvertree.ipfilter.exception.MalformedIpAddressException;
 import com.silvertree.ipfilter.model.IPFilter;
@@ -23,7 +23,7 @@ import com.silvertree.ipfilter.model.IPFilter;
 public abstract class IpFilterServiceTestCases extends TestCase {
 	
 	protected IIpFilterServiceImpl service;
-	protected IIPFilterDao dao;
+	protected IpFilterDao dao;
 	
 	protected final static String FILTER_PATTERN_01 = "188.221.174.101 - 188.221.174.199";
 	protected final static String FILTER_PATTERN_02 = "82.165.97.11 - 82.165.97.79";

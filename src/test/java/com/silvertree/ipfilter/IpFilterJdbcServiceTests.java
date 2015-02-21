@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.silvertree.ipfilter.dao.IIPFilterDao;
+import com.silvertree.ipfilter.dao.IpFilterDao;
 
 /**
  * Test for checking the functions of IpFilter service.
@@ -24,7 +24,7 @@ public class IpFilterJdbcServiceTests extends IpFilterServiceTestCases {
 	private IIpFilterServiceImpl jdbcService;
 
 	@Autowired
-	private IIPFilterDao ipFilterJDBCDAO;
+	private IpFilterDao ipFilterJDBCDAO;
 	
 	@Before
 	public void setUpRelationalDatabaseService(){

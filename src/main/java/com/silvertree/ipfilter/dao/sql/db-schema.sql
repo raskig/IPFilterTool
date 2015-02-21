@@ -1,0 +1,1 @@
+CREATE TABLE IP_FILTER (PATTERN_ID int generated always as identity, PATTERN varchar(225),PRIMARY KEY (PATTERN_ID),UNIQUE (PATTERN));

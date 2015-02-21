@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.silvertree.ipfilter.dao.IIPFilterDao;
+import com.silvertree.ipfilter.dao.IpFilterDao;
 import com.silvertree.ipfilter.model.IPFilter;
 
 /**
@@ -26,7 +26,7 @@ public class IpFilterMockServiceTests extends IpFilterServiceTestCases {
 	@Before
 	public void setMockervice(){
 		mockService = new IIpFilterServiceImpl();
-		mockService.setIpFilterDao(new IIPFilterDao(){
+		mockService.setIpFilterDao(new IpFilterDao(){
 			public List<IPFilter> selectAllFilters() {
 				List<IPFilter> list = new ArrayList<IPFilter>();
 				list.add(new IPFilter(IpFilterServiceTestCases.FILTER_PATTERN_01));
