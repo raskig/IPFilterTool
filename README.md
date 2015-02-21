@@ -3,7 +3,7 @@
 Demo implementation of Spring Tool Suite for validating permitted ip addresses based on a configuration.
 
 The configuration contains several range of IP addresses from which we will accept connections.
-The range configuration can be ip range (<from-ip> - <to-ip>) or
+The range configuration can be ip range (from-ip - to-ip) or
 it can be a wildcatded ip address.
 
 Example config:
@@ -33,4 +33,7 @@ For running tests you need to install and run redis:
   https://github.com/raskig/IPFilterTool/blob/master/src/main/java/com/silvertree/ipfilter/dao/sql/db-schema.sql
   
   (http://db.apache.org/derby/quick_start.html)
+  
+ #Setting up database with configuration
+  Use IpFilterDao implementations
   
