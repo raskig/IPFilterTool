@@ -32,8 +32,9 @@ For running tests you need to install and run redis:
   
   https://github.com/raskig/IPFilterTool/blob/master/src/main/java/com/silvertree/ipfilter/dao/sql/db-schema.sql
   
-  (http://db.apache.org/derby/quick_start.html)
+  Derby howto: http://db.apache.org/derby/quick_start.html
   
- #Setting up database with configuration:
+#Adding filter config lines to database:
+  
   Use IpFilterDao implementations
   
