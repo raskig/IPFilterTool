@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.silvertree.ipfilter.dao.IIPFilterDao;
 import com.silvertree.ipfilter.exception.ForbiddenIpAddressException;
 import com.silvertree.ipfilter.exception.MalformedIpAddressException;
+import com.silvertree.ipfilter.model.IPFilter;
 
 /**
  * Test for checking the functions of IpFilter service.
@@ -21,11 +23,27 @@ import com.silvertree.ipfilter.exception.MalformedIpAddressException;
 public abstract class IpFilterServiceTestCases extends TestCase {
 	
 	protected IIpFilterServiceImpl service;
+	protected IIPFilterDao dao;
 	
 	protected final static String FILTER_PATTERN_01 = "188.221.174.101 - 188.221.174.199";
 	protected final static String FILTER_PATTERN_02 = "82.165.97.11 - 82.165.97.79";
 	protected final static String FILTER_PATTERN_03 = "82.132.141.*";
 
+	
+	protected void setUp(){
+		assertNotNull(service);
+		assertNotNull(dao);
+		dao.addFilter(new IPFilter( FILTER_PATTERN_01));
+		dao.addFilter(new IPFilter( FILTER_PATTERN_02));
+		dao.addFilter(new IPFilter( FILTER_PATTERN_03));
+	}
+	
+	protected void tearDown(){
+		dao.removeFilter(new IPFilter( FILTER_PATTERN_01));
+		dao.removeFilter(new IPFilter( FILTER_PATTERN_02));
+		dao.removeFilter(new IPFilter( FILTER_PATTERN_03));
+	}
+	
 	//Tests with malformed input
 	@Test(expected=MalformedIpAddressException.class)
 	public void testMalformedAddress01() throws ForbiddenIpAddressException, MalformedIpAddressException {

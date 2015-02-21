@@ -11,7 +11,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
 import org.springframework.stereotype.Component;
 
-import com.silvertree.ipfilter.IpFilterServiceTestCases;
 import com.silvertree.ipfilter.model.IPFilter;
 
 /**

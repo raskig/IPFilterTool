@@ -12,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.silvertree.ipfilter.dao.IIPFilterDao;
-import com.silvertree.ipfilter.model.IPFilter;
 
 /**
  * Test for checking the functions of IpFilter service.
@@ -39,18 +38,14 @@ public class IpFilterRedisServiceTests extends IpFilterServiceTestCases {
 
 	@Before
 	public void setUpRedis(){
-		ipFilterRedisDAO.addFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_01));
-		ipFilterRedisDAO.addFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_02));
-		ipFilterRedisDAO.addFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_03));
+		this.dao = ipFilterRedisDAO;
 		this.service = redisService;
-		assertNotNull(service);
+		super.setUp();
 	}
 	
 	@After
-	public void tearDownRelationalDatabaseService(){
-		ipFilterRedisDAO.removeFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_01));
-		ipFilterRedisDAO.removeFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_02));
-		ipFilterRedisDAO.removeFilter(new IPFilter( IpFilterServiceTestCases.FILTER_PATTERN_03));
+	public void tearDownRedis(){
+		super.tearDown();
 	}
 
 }
