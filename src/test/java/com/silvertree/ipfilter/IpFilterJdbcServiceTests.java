@@ -15,13 +15,13 @@ import com.silvertree.ipfilter.dao.IpFilterDao;
  *
  */
 
-@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterServiceTests-context.xml"})
+@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterJdbcServiceTests-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IpFilterJdbcServiceTests extends IpFilterServiceTestCases {
 
 
 	@Autowired
-	private IIpFilterServiceImpl jdbcService;
+	private IIpFilterServiceImpl service;
 
 	@Autowired
 	private IpFilterDao ipFilterJDBCDAO;
@@ -29,7 +29,6 @@ public class IpFilterJdbcServiceTests extends IpFilterServiceTestCases {
 	@Before
 	public void setUpRelationalDatabaseService(){
 		this.dao = ipFilterJDBCDAO;
-		this.service = jdbcService;
 		super.setUp();
 	}
 	

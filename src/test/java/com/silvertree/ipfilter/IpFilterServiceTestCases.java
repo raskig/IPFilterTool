@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,7 +23,10 @@ import com.silvertree.ipfilter.model.IPFilter;
 @RunWith(SpringJUnit4ClassRunner.class)
 public abstract class IpFilterServiceTestCases extends TestCase {
 	
+	@Autowired
 	protected IIpFilterServiceImpl service;
+	
+	@Autowired
 	protected IpFilterDao dao;
 	
 	protected final static String FILTER_PATTERN_01 = "188.221.174.101 - 188.221.174.199";

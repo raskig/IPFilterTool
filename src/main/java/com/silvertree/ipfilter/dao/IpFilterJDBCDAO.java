@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -19,14 +21,12 @@ import com.silvertree.ipfilter.model.IPFilter;
  */
 
 @Component
-public class IpFilterJDBCDAO implements IpFilterDao, IpFilterRelationalDBDao {
+public class IpFilterJDBCDAO implements IpFilterDao {
 
+	
+	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
-	public void setDataSource(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-
 
 	public List<IPFilter> selectAllFilters() {
 

@@ -19,7 +19,7 @@ import com.silvertree.ipfilter.dao.IpFilterDao;
  *
  */
 
-@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterServiceTests-context.xml"})
+@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterRedisServiceTests-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IpFilterRedisServiceTests extends IpFilterServiceTestCases {
 
@@ -30,16 +30,11 @@ public class IpFilterRedisServiceTests extends IpFilterServiceTestCases {
     @Resource(name="redisTemplate")
     private SetOperations<String, String> setOps;
 	
-	@Autowired
-	private IIpFilterServiceImpl redisService;
 	
-	@Autowired
-	private IpFilterDao ipFilterRedisDAO;
+
 
 	@Before
 	public void setUpRedis(){
-		this.dao = ipFilterRedisDAO;
-		this.service = redisService;
 		super.setUp();
 	}
 	

@@ -9,26 +9,20 @@
 	<description>IPFilter service application context configuration</description>
 
 	<context:component-scan base-package="com.silvertree.ipfilter" />
-
-	<bean id="ipFilterJDBCDAO" scope="singleton" class="com.silvertree.ipfilter.dao.IpFilterJDBCDAO">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-	<bean id="ipFilterRedisDAO" scope="singleton" class="com.silvertree.ipfilter.dao.IpFilterRedisDAO"/>
+   
+   <!-- JDBC settings -->
+   
+	<bean id="dataSource" class="org.apache.derby.jdbc.ClientDataSource">
+		<property name="databaseName" value="MyDbTest" />
+		<property name="serverName" value="localhost" />
+		<property name="portNumber" value="1527" />
+	</bean>
 	
-	<bean id="redisService" scope="singleton" class="com.silvertree.ipfilter.IIpFilterServiceImpl">
-		<property name="ipFilterDao" ref="ipFilterRedisDAO"/>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="jdbcService" scope="singleton" class="com.silvertree.ipfilter.IIpFilterServiceImpl">
-		<property name="ipFilterDao" ref="ipFilterJDBCDAO"/>
-	</bean>	
-    
-    <bean id="dataSource"  class="org.apache.derby.jdbc.ClientDataSource">
-        <property name="databaseName" value="MyDbTest"/>
-        <property name="serverName" value="localhost"/>
-        <property name="portNumber" value="1527"/>
-    </bean>
+   <!-- REDIS settings -->
 
 	<bean id="jedisConnFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"

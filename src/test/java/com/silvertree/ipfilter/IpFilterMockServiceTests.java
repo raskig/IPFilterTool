@@ -17,7 +17,7 @@ import com.silvertree.ipfilter.model.IPFilter;
  *
  */
 
-@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterServiceTests-context.xml"})
+@ContextConfiguration({"classpath:com/silvertree/ipfilter/IpFilterMockServiceTests-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IpFilterMockServiceTests extends IpFilterServiceTestCases {
 
