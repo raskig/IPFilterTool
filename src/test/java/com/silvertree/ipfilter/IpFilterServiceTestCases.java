@@ -24,7 +24,7 @@ import com.silvertree.ipfilter.model.IPFilter;
 public abstract class IpFilterServiceTestCases extends TestCase {
 	
 	@Autowired
-	protected IIpFilterServiceImpl service;
+	protected IIpFilterService service;
 	
 	@Autowired
 	protected IpFilterDao dao;
