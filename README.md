@@ -9,7 +9,9 @@ it can be a wildcarded ip address.
 Example config:
 
 188.221.174.101 - 188.221.174.199
+
 82.165.97.11 - 82.165.97.79
+
 82.132.141.*
 
 The service validates whether any given IP address is a permitted client.
